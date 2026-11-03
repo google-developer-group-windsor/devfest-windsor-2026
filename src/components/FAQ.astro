@@ -96,124 +96,60 @@ const frenchFaqItems = fr.faq.items as FAQItem[];
           <div class="w-12 h-1 bg-yellow-400 rounded-full"></div>
         </div>
 
-        <!-- CONTACT CARD -->
-        <div
-          class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 text-white animate-scale-in"
-        >
-          <div class="flex items-start gap-3 mb-4">
-
-            <!-- EMAIL ICON -->
-            <svg
-              class="w-6 h-6 flex-shrink-0 mt-1"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-              ></path>
-            </svg>
-
-            <div>
-              <h3
-                class="font-bold text-lg mb-1"
-                data-i18n="faq.cantFind"
-              >
-                {t(lang, "faq.cantFind")}
-              </h3>
-
-              <p
-                id="faq-community-text"
-                class="text-blue-100 text-sm mb-4"
-              >
-                Join our GDG Windsor community
-              </p>
-
-              <a
-                href="https://gdg.community.dev/gdg-windsor/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors cursor-pointer inline-block"
-                data-i18n="faq.contactUs"
-              >
-                {t(lang, "faq.contactUs")}
-              </a>
-            </div>
-          </div>
-        </div>
+        <!-- CONTACT CARD REMOVED -->
       </div>
 
       <!-- RIGHT ACCORDION -->
       <div class="animate-slide-in-right space-y-4">
 
         {
-          faqItems.map((item, index) => {
-            const isSponsorQuestion =
-              index === faqItems.length - 1;
-
-            return (
-              <details
-                class="faq-item group border-2 border-slate-200 rounded-xl overflow-hidden hover:border-blue-400 transition-colors animate-fade-in-up"
-                style={`animation-delay: ${index * 0.1}s;`}
-                open={index === 0}
-                data-faq-index={index}
+          faqItems.map((item, index) => (
+            <details
+              class="faq-item group border-2 border-slate-200 rounded-xl overflow-hidden hover:border-blue-400 transition-colors animate-fade-in-up"
+              style={`animation-delay: ${index * 0.1}s;`}
+              open={index === 0}
+              data-faq-index={index}
+            >
+              <summary
+                class="flex items-center justify-between gap-4 p-6 bg-white hover:bg-slate-50 transition-colors cursor-pointer"
               >
-                <summary
-                  class="flex items-center justify-between gap-4 p-6 bg-white hover:bg-slate-50 transition-colors cursor-pointer"
+                <h3
+                  class="faq-question text-lg font-bold text-slate-900"
+                  data-i18n={`faq.items.${index}.question`}
                 >
-                  <h3
-                    class="faq-question text-lg font-bold text-slate-900"
-                    data-i18n={`faq.items.${index}.question`}
-                  >
-                    {item.question}
-                  </h3>
+                  {item.question}
+                </h3>
 
-                  <svg
-                    class="w-5 h-5 shrink-0 text-blue-600 transition-transform duration-300 group-open:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                    ></path>
-                  </svg>
-                </summary>
-
-                <div
-                  class="px-6 pb-6 pt-5 bg-slate-50 border-t-2 border-slate-200"
+                <svg
+                  class="w-5 h-5 shrink-0 text-blue-600 transition-transform duration-300 group-open:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
-                  <div class="space-y-4">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  ></path>
+                </svg>
+              </summary>
 
-                    <p
-                      class="faq-answer text-slate-600 leading-relaxed"
-                      data-i18n={`faq.items.${index}.answer`}
-                    >
-                      {item.answer}
-                    </p>
-
-                    {
-                      isSponsorQuestion && (
-                        <a
-                          href="https://gdg.community.dev/gdg-windsor/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                          data-i18n="faq.contactUs"
-                        >
-                          {t(lang, "faq.contactUs")}
-                        </a>
-                      )
-                    }
-                  </div>
+              <div
+                class="px-6 pb-6 pt-5 bg-slate-50 border-t-2 border-slate-200"
+              >
+                <div class="space-y-4">
+                  <p
+                    class="faq-answer text-slate-600 leading-relaxed"
+                    data-i18n={`faq.items.${index}.answer`}
+                  >
+                    {item.answer}
+                  </p>
                 </div>
-              </details>
-            );
-          })
+              </div>
+            </details>
+          ))
         }
       </div>
     </div>
@@ -284,8 +220,6 @@ const frenchFaqItems = fr.faq.items as FAQItem[];
 
     if (!faqSection) return;
 
-    const translation = translations[language].faq;
-
     // Update all translated text, including FAQ questions.
     faqSection
       .querySelectorAll<HTMLElement>("[data-i18n]")
@@ -317,19 +251,6 @@ const frenchFaqItems = fr.faq.items as FAQItem[];
           element.textContent = value;
         }
       });
-
-    // Additional text not stored in JSON.
-    const communityText =
-      faqSection.querySelector<HTMLElement>(
-        "#faq-community-text"
-      );
-
-    if (communityText) {
-      communityText.textContent =
-        language === "fr"
-          ? "Rejoignez notre communauté GDG Windsor"
-          : "Join our GDG Windsor community";
-    }
 
     // Keep the existing open/closed accordion states.
     currentLanguage = language;
