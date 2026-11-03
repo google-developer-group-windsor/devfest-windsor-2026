@@ -2,6 +2,17 @@ import type { Session } from "../types/session";
 
 export const SUBMITTED_SESSIONS: Session[] = [
   {
+    id: "serg-masis-001",
+    title: "Don't Bet the Farm on Magic Beans: Rethinking AI's Promise, from Hype to Agriculture",
+    speaker: "Serg Masís",
+    description: `Artificial intelligence has become remarkably good at impressing us. It can write poetry, generate images, answer complex questions, and produce convincing predictions about its own revolutionary future. But being impressive and being useful aren't the same.
+
+What if AI's greatest contributions are far less glamorous than the headlines suggest? What if the real revolution is about doing millions of small, necessary things that humans lack the time, resources, or expertise to do consistently?
+
+This keynote moves beyond AI's hype cycle to examine how we can prioritize technological investments based on real-world value. From healthcare and infrastructure to energy and food security, we'll explore where AI can make a meaningful difference before taking a closer look at agriculture—and the challenge of feeding a growing population amid climate uncertainty, labor shortages, and finite resources. Drawing on examples from Syngenta, we'll discover why the most important AI breakthroughs may be the ones nobody thinks to call revolutionary. Yet this unsexy side of AI may prove most consequential!`,
+    isSubmitted: true,
+  },
+  {
     id: "frank-abbruzzese-001",
     title: "Build Relationships First...Sell later.",
     speaker: "Frank Abbruzzese",
@@ -179,9 +190,46 @@ Join us to explore one central question: How can technology leaders turn technic
     speaker: "Sandra Lopez-Zamora",
     description: `Your agent nailed the demo, but then real users showed up with vague questions, unexpected paths, and edge cases, and it gave confident answers that were quietly wrong. Agents fail differently from traditional software: they’re non-deterministic, they make multi-step decisions, and they’ll happily report a task as done when it isn’t.
 
-This session shows a practical way to evaluate agents before your users end up doing the testing for you. Using Gemini Enterprise Agent Platform, we will go beyond checking the final answer to evaluate tool choices, trajectories, and safety behaviour. We will also generate realistic test scenarios, so you aren’t limited to the cases you thought of, and use the results to find and fix what’s breaking.
+This session shows a practical way to evaluate agents before your users become your testers. Using Gemini Enterprise Agent Platform, we will look beyond final answers to assess tool selection, execution paths, and safety behaviour.
 
-You will leave with a clear model for agent evaluation that you can apply to your own agents, whether you’re shipping your first prototype or running agents in production.`,
+ We will also generate realistic test scenarios to uncover cases you may not have anticipated and use the results to identify failures and guide improvements.
+
+You will leave with a clear model for evaluating your own agents, whether you are building your first prototype or running agents in production.`,
+    isSubmitted: true,
+  },
+  {
+    id: "don-ward-001",
+    title: "Google Antigravity: Harnessing the Power",
+    speaker: "Don Ward",
+    description: `With AI tools evolving rapidly, knowing where to invest your time can be challenging. This session introduces:
+
+Google Antigravity—a streamlined, agentic development platform powered by Gemini models and the best of Google Cloud.
+
+In this session, you’ll discover:
+
+- The essentials: what Google Antigravity is and howit fits into your workflow.
+- Hands-on building: step-by-step guidance to set up and launch your very first agentic workflow.
+- Best practices: practical tips to hit the ground running with confidence.
+
+Whether you're exploring agentic systems or ready to build, you’ll leave with a clear understanding of the platform and practical steps to begin.`,
+    isSubmitted: true,
+  },
+  {
+    id: "veronica-reingold-001",
+    title: "\"I Think I'm Extinct\": Growing a Computer Science Career in the Age of Generative AI",
+    speaker: "Veronica Reingold",
+    description: `Is your future in tech about to become "extinct," or is history simply repeating itself? This talk examines defining moments in technological history to show how past disruptions upended industries and reshaped the careers of skilled professionals. 
+
+Translating those pivotal moments to modern software development, we’ll cut through the hype surrounding generative AI and discuss practical strategies for building a durable computer science career.`,
+    isSubmitted: true,
+  },
+  {
+    id: "bryan-kelly-001",
+    title: "Beyond Vibe Checks: Hill-Climbing AI Agents from Prototype to Production",
+    speaker: "Bryan Kelly",
+    description: `It has never been faster to build a working AI agent prototype. In 15 minutes, you can connect an LLM to a few Python functions, try out a couple of prompts in chat, and have a great demo running on your laptop. The next challenge is getting that prototype ready for real users, where edge cases show up and a small edit to your prompt can change how the agent handles other tasks.
+
+In this talk, we will walk through how to keep the fast pace of prototyping while preparing your agent for production through hill climbing. Instead of guessing whether an edit helped or hurt, you will set up an evaluation suite that gives you a clear score after every change. First, we will trace what happens inside a single agent turn across context windows, tools, MCP, skills, and sub-agents so you know which part to adjust when a test fails. Then, using a sample EV Service Concierge agent built with Google's Agent Development Kit (ADK), we will take a 15-minute prototype, improve its tool schemas, and run automated prompt optimization until it passes every test case.`,
     isSubmitted: true,
   },
 ];
