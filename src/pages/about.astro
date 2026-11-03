@@ -121,64 +121,6 @@ I enjoy combining creativity with coding, learning new things, and connecting wi
   },
 ];
 
-const moderator: Person = {
-  name: "Yvonne Pilon",
-  company: "WEtech Alliance",
-  role: "President & CEO",
-  image: "/moderator/YvonnePilon.webp",
-  color: "blue",
-  bio: `Yvonne Pilon is the President and CEO of WEtech Alliance, one of Ontario’s Regional Innovation Centres. With 15+ years of leadership at the intersection of technology, innovation, entrepreneurship, and economic development, she is widely recognized for championing Canadian Tech and cross-border collaboration and strengthening entrepreneurial ecosystems that drive innovation and prosperity across Canada and the U.S. Yvonne serves on the Board of Directors for the Technology Councils of North America (TECNA) and on the Advisory Board for Canada’s Tech Network, amplifying the voice of innovators nationally and internationally. She has represented Canada as a G20 Youth Entrepreneurship delegate and has been recognized as an Emerging Leader in Startups & Tech by The Peak.`,
-};
-
-const panelists: Person[] = [
-  {
-    name: "Don Ward",
-    company: "Google",
-    role: "Customer Engineer",
-    image: "/panelists/don-ward.webp",
-    color: "blue",
-    bio: `Don Ward is a cloud enthusiast and Customer Engineer at Google Cloud, bringing deep practical experience to the table. In the last 5 years alone, he's earned an impressive 17 cloud certifications across Google and AWS, fueled by a passion for continuous learning and a drive to master the Google Cloud ecosystem. Don's commitment extends to the local tech scene, where he's spent 12 years fostering growth by leading Google Developer Groups in Windsor and Detroit. While transitioning leadership, he remains a dedicated volunteer, empowering others to lead.`,
-  },
-  {
-    name: "Naresh Jasotani",
-    company: "Google",
-    role: "Technology Leader / AI & ML",
-    image: "/panelists/NareshJasotani.webp",
-    color: "red",
-    bio: `Naresh has over 17 years of experience in helping customers to get benefits of data, analytics and artificial intelligence advancements. With Machine Learning picking up in the last few years, he believes that it has brought endless possibilities for businesses to make data-based decisions, and be more predictive in their thought process. Naresh currently works at Google in the AI & ML domain and in the past, he gained consulting experience working for companies like Infosys, TCS, Accenture and Miracle Software Systems.
-
-He is passionate about building solutions with customers, published author (Book: Adopting TensorFlow for real-world AI), and avid YouTuber. He enjoys taking up new challenges, analysing customers’ business problems and coming up with innovative solutions that can be solved by collecting, understanding, designing data, analytics and Machine learning solutions. He loves flying planes and has a Pilot’s License as well.`,
-  },
-  {
-    name: "James Lannigan",
-    company: "Signal49 Research",
-    role: "Senior Research Associate (Innovation and Technology)",
-    image: "/panelists/JamesLannigan.webp",
-    color: "yellow",
-    bio: `Dr. James Lannigan brings a unique mixed-methods approach that combines in-depth qualitative research, statistical rigour, and social network analysis to produce actionable insights for informed decision-making. At Signal49 Research, his work focuses on emerging technology adoption in Canada, including C-suite perspectives on artificial intelligence, recent AI developments, and projects examining AI adoption among Canadian firms and innovation trends in the mining and oil and gas sectors. His role spans the full research lifecycle, including project design, stakeholder engagement, qualitative and quantitative data collection, advanced analysis, and knowledge mobilization.
-
-In addition to his core responsibilities, Dr. Lannigan contributes to several internal initiatives at Signal49 Research, including the AI Table, Research Community of Practice, Joint Health and Safety Committee, and the Wellness Committee. Dr. Lannigan’s academic research centres on communication and social networks, with topics spanning social media engagement by public institutions, political polarization in digital and print media, and consumer–brand interactions. His doctoral research examined specialty coffee ecosystems in Hamilton and Toronto, focusing on interorganizational networks, market niches, and organizational responses to the COVID-19 pandemic. He has held research roles at the University of Toronto and Toronto Metropolitan University.`,
-  },
-  {
-    name: "Mina Girges",
-    company: "TransForm Shared Service Organization",
-    role: "Vice President & Chief Information Officer",
-    image: "/panelists/MinaGirges.webp",
-    color: "green",
-    bio: `Mina Girges is an award-winning Information Systems leader and IT strategist, recognized for his expertise in secure, efficient, and scalable technology solutions. Currently Vice President & Chief Information Officer at TransForm Shared Service Organization, he is focused on Zero Trust, digital transformation, and building secure, scalable infrastructure that drives business outcomes.`,
-  },
-  {
-    name: "Godfrey Nolan",
-    company: "RIIS LLC",
-    role: "President",
-    image: "/panelists/GodfreyNolan.webp",
-    color: "blue",
-    bio: `Godfrey Nolan is the President of RIIS LLC, a mobile development company based in Troy, Michigan, and Windsor specializing in mobile apps for drones. With over 26 years of experience, he has built a team of experts capable of defining, developing, testing, and deploying mobile and web applications for our clients. Godfrey is also a prolific author, having written six books on mobile development and security, including "Decompiling Java" and "Bulletproof Android."
-
-In addition to his role at RIIS LLC, he serves as an Adjunct Professor at multiple universities, teaching various subjects related to programming and development, including Java, LLMs, Blockchain technologies, and Android programming. His extensive experience in both the industry and academia highlights his expertise in mobile technology, requirements analysis, architecture, and continuous integration. Godfrey Nolan's contributions span the worlds of education, mobile app development, and published authorship in the field of technology.`,
-  },
-];
-
 const facilitators: Person[] = [
   {
     name: "Ron McKenzie",
@@ -206,26 +148,17 @@ Love of everything tech, UFOs, and Summer.`,
   },
 ];
 
+// ==========================================
+// ABOUT PAGE SECTIONS
+// Moderator and Panelists removed
+// ==========================================
+
 const sections: PeopleSection[] = [
   {
     id: "organizers",
     eyebrow: "MEET THE TEAM",
     title: "Meet Our Organizers",
     people: organizers,
-    background: "bg-gradient-to-b from-slate-50 to-white",
-  },
-  {
-    id: "moderator",
-    eyebrow: "MEET THE PEOPLE",
-    title: "Meet Our Moderator",
-    people: [moderator],
-    background: "bg-white",
-  },
-  {
-    id: "panelists",
-    eyebrow: "MEET THE PEOPLE",
-    title: "Meet Our Panelists",
-    people: panelists,
     background: "bg-gradient-to-b from-slate-50 to-white",
   },
   {
@@ -253,7 +186,10 @@ const colors: Record<Person["color"], string> = {
   <Header logoSrc="/web-app-manifest-512x512.png" />
 
   <main class="pt-20">
-    <!-- ABOUT HERO -->
+    <!-- ======================================
+         ABOUT HERO
+    ======================================= -->
+
     <section class="bg-white py-12 md:py-20">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="grid items-center gap-10 md:grid-cols-2 md:gap-12">
@@ -307,7 +243,11 @@ const colors: Record<Person["color"], string> = {
       </div>
     </section>
 
-    <!-- PEOPLE SECTIONS -->
+    <!-- ======================================
+         PEOPLE SECTIONS
+         Organizers + Facilitators only
+    ======================================= -->
+
     {
       sections.map((section) => (
         <section
@@ -348,8 +288,8 @@ const colors: Record<Person["color"], string> = {
             <div
               class:list={[
                 "people-grid",
-                section.id === "moderator" && "people-grid--moderator",
-                section.id === "facilitators" && "people-grid--facilitators",
+                section.id === "facilitators" &&
+                  "people-grid--facilitators",
               ]}
             >
               {section.people.map((person, index) => (
@@ -421,36 +361,16 @@ const colors: Record<Person["color"], string> = {
       ))
     }
 
-    <!-- STATS -->
+    <!-- ======================================
+         STATS
+         500+ and 20+ removed
+    ======================================= -->
+
     <section
       class="bg-gradient-to-r from-blue-600 via-green-500 to-yellow-400 py-16 md:py-24"
     >
-      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 gap-8 text-center text-white md:grid-cols-4">
-          <div>
-            <div class="mb-2 text-4xl font-bold sm:text-5xl md:text-6xl">
-              500+
-            </div>
-            <p
-              class="text-sm opacity-90 sm:text-lg"
-              data-about-i18n="attendees"
-            >
-              Expected Attendees
-            </p>
-          </div>
-
-          <div>
-            <div class="mb-2 text-4xl font-bold sm:text-5xl md:text-6xl">
-              20+
-            </div>
-            <p
-              class="text-sm opacity-90 sm:text-lg"
-              data-about-i18n="speakers"
-            >
-              Amazing Speakers
-            </p>
-          </div>
-
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 gap-8 text-center text-white">
           <div>
             <div class="mb-2 text-4xl font-bold sm:text-5xl md:text-6xl">
               8
@@ -478,7 +398,10 @@ const colors: Record<Person["color"], string> = {
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- ======================================
+         CALL TO ACTION
+    ======================================= -->
+
     <section class="bg-white py-16 md:py-24">
       <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <h2
@@ -509,7 +432,10 @@ const colors: Record<Person["color"], string> = {
     </section>
   </main>
 
-  <!-- SHARED BIO MODAL -->
+  <!-- ======================================
+       SHARED BIO MODAL
+  ======================================= -->
+
   <dialog
     id="personBioModal"
     class="person-modal rounded-2xl bg-white text-slate-900"
@@ -585,7 +511,9 @@ const colors: Record<Person["color"], string> = {
 </BaseLayout>
 
 <style>
-  /* PEOPLE GRID */
+  /* ======================================
+     PEOPLE GRID
+  ======================================= */
 
   .people-grid {
     display: grid;
@@ -595,22 +523,14 @@ const colors: Record<Person["color"], string> = {
     align-items: stretch;
   }
 
-  .people-grid--moderator {
-    display: flex;
-    justify-content: center;
-  }
-
-  .people-grid--moderator .person-card {
-    width: 100%;
-    max-width: 280px;
-  }
-
   .people-grid--facilitators {
     max-width: 640px;
     margin-inline: auto;
   }
 
-  /* PERSON CARD */
+  /* ======================================
+     PERSON CARD
+  ======================================= */
 
   .person-card {
     display: flex;
@@ -623,7 +543,9 @@ const colors: Record<Person["color"], string> = {
     padding: 0 2px;
   }
 
-  /* PROFILE PHOTO */
+  /* ======================================
+     PROFILE PHOTO
+  ======================================= */
 
   .person-avatar-button {
     position: relative;
@@ -689,7 +611,9 @@ const colors: Record<Person["color"], string> = {
     }
   }
 
-  /* CONTENT */
+  /* ======================================
+     CONTENT
+  ======================================= */
 
   .person-content {
     display: flex;
@@ -729,7 +653,9 @@ const colors: Record<Person["color"], string> = {
     hyphens: auto;
   }
 
-  /* BIO BUTTON */
+  /* ======================================
+     BIO BUTTON
+  ======================================= */
 
   .person-bio-button {
     display: inline-flex;
@@ -759,7 +685,9 @@ const colors: Record<Person["color"], string> = {
     transform: translateY(-2px);
   }
 
-  /* TABLET AND DESKTOP */
+  /* ======================================
+     TABLET AND DESKTOP
+  ======================================= */
 
   @media (min-width: 640px) {
     .people-grid {
@@ -803,7 +731,9 @@ const colors: Record<Person["color"], string> = {
     }
   }
 
-  /* MOBILE */
+  /* ======================================
+     MOBILE
+  ======================================= */
 
   @media (max-width: 639px) {
     .people-grid {
@@ -868,7 +798,9 @@ const colors: Record<Person["color"], string> = {
     }
   }
 
-  /* MODAL */
+  /* ======================================
+     MODAL
+  ======================================= */
 
   .person-modal {
     width: min(42rem, calc(100% - 24px));
@@ -902,7 +834,9 @@ const colors: Record<Person["color"], string> = {
     }
   }
 
-  /* ANIMATIONS */
+  /* ======================================
+     ANIMATIONS
+  ======================================= */
 
   @keyframes fadeInLeft {
     from {
@@ -952,7 +886,9 @@ const colors: Record<Person["color"], string> = {
     animation: fadeInUp 0.6s ease-out both;
   }
 
-  /* ACCESSIBILITY */
+  /* ======================================
+     ACCESSIBILITY
+  ======================================= */
 
   .person-trigger:focus-visible,
   .person-modal button:focus-visible,
@@ -980,6 +916,10 @@ const colors: Record<Person["color"], string> = {
 </style>
 
 <script>
+  // ======================================
+  // TRANSLATIONS — ENGLISH / FRENCH
+  // ======================================
+
   const translations: Record<string, Record<string, string>> = {
     en: {
       heroEyebrow: "🔥 What is DevFest?",
@@ -992,12 +932,6 @@ const colors: Record<Person["color"], string> = {
       organizersEyebrow: "MEET THE TEAM",
       organizersTitle: "Meet Our Organizers",
 
-      moderatorEyebrow: "MEET THE PEOPLE",
-      moderatorTitle: "Meet Our Moderator",
-
-      panelistsEyebrow: "MEET THE PEOPLE",
-      panelistsTitle: "Meet Our Panelists",
-
       facilitatorsEyebrow: "MEET THE PEOPLE",
       facilitatorsTitle: "Meet Our Facilitators",
 
@@ -1008,8 +942,6 @@ const colors: Record<Person["color"], string> = {
       gdgProfile: "GDG Profile ↗",
       website: "Website ↗",
 
-      attendees: "Expected Attendees",
-      speakers: "Amazing Speakers",
       hours: "Hours of Content",
       networking: "Networking Value",
 
@@ -1030,12 +962,6 @@ const colors: Record<Person["color"], string> = {
       organizersEyebrow: "RENCONTREZ L'ÉQUIPE",
       organizersTitle: "Rencontrez nos organisateurs",
 
-      moderatorEyebrow: "RENCONTREZ LES INTERVENANTS",
-      moderatorTitle: "Rencontrez notre modératrice",
-
-      panelistsEyebrow: "RENCONTREZ LES INTERVENANTS",
-      panelistsTitle: "Rencontrez nos panélistes",
-
       facilitatorsEyebrow: "RENCONTREZ LES INTERVENANTS",
       facilitatorsTitle: "Rencontrez nos facilitateurs",
 
@@ -1046,8 +972,6 @@ const colors: Record<Person["color"], string> = {
       gdgProfile: "Profil GDG ↗",
       website: "Site web ↗",
 
-      attendees: "Participants attendus",
-      speakers: "Conférenciers extraordinaires",
       hours: "Heures de contenu",
       networking: "Valeur du réseautage",
 
@@ -1099,6 +1023,10 @@ const colors: Record<Person["color"], string> = {
       bioElement.textContent = dictionary.bioComingSoon;
     }
   }
+
+  // ======================================
+  // BIO MODAL FUNCTIONALITY
+  // ======================================
 
   function initializeAboutPage() {
     const modal =
@@ -1209,6 +1137,7 @@ const colors: Record<Person["color"], string> = {
       }
     }
 
+    // OPEN BIO MODAL
     document.addEventListener("click", (event) => {
       const target = event.target;
 
@@ -1229,14 +1158,17 @@ const colors: Record<Person["color"], string> = {
       }
     });
 
+    // CLOSE BUTTON
     closeButton?.addEventListener("click", () => {
       modal.close();
     });
 
+    // RESTORE FOCUS
     modal.addEventListener("close", () => {
       previousFocus?.focus();
     });
 
+    // CLOSE WHEN CLICKING OUTSIDE
     modal.addEventListener("click", (event) => {
       if (event.target !== modal) {
         return;
@@ -1257,6 +1189,7 @@ const colors: Record<Person["color"], string> = {
 
     updateTranslations();
 
+    // LANGUAGE OBSERVER
     const observer = new MutationObserver(updateTranslations);
 
     observer.observe(document.documentElement, {
