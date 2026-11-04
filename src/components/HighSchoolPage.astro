@@ -1,0 +1,564 @@
+
+---
+/**
+ * DevFest Windsor 2026
+ * High School Track — Full Page Component
+ *
+ * Used by: src/pages/high-school.astro
+ *
+ * Event Details and FAQ sections removed.
+ */
+
+const eventDate = "November 21, 2026";
+
+const ticketsUrl =
+  "https://gdg.community.dev/events/details/google-gdg-windsor-presents-gdg-windsor-essex-devfest-2026/cohost-gdg-windsor/";
+
+const features = [
+  {
+    number: "01",
+    title: "Build a Robot Car",
+    description:
+      "Work with your team to assemble a robotic car and discover how its electronic components work together.",
+    icon: "🔧",
+    color: "blue",
+  },
+  {
+    number: "02",
+    title: "Learn to Code",
+    description:
+      "Explore programming fundamentals and write code that controls your robot's movements.",
+    icon: "💻",
+    color: "red",
+  },
+  {
+    number: "03",
+    title: "Explore Smart Sensors",
+    description:
+      "Discover how sensors help robots detect obstacles and respond to their surroundings.",
+    icon: "📡",
+    color: "green",
+  },
+];
+
+const experiences = [
+  {
+    title: "Collaborative Learning",
+    description:
+      "Work alongside other students, share ideas, and solve challenges together.",
+  },
+  {
+    title: "Hands-On Technology",
+    description:
+      "Explore the connection between programming, electronics, and robotics.",
+  },
+  {
+    title: "Creative Problem-Solving",
+    description:
+      "Experiment, troubleshoot, and improve your robotic creation.",
+  },
+  {
+    title: "Developer Community",
+    description:
+      "Experience the energy of DevFest and discover the wider world of technology.",
+  },
+];
+
+const accentColors: Record<string, string> = {
+  blue: "bg-blue-500",
+  red: "bg-red-500",
+  green: "bg-green-500",
+};
+---
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section
+  class="relative overflow-hidden bg-blue-50 px-4 pb-16 pt-12 sm:px-6 sm:pb-24 sm:pt-20 lg:px-8"
+  aria-labelledby="high-school-title"
+>
+  <!-- Decorative Background -->
+  <div
+    class="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-yellow-200/40 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-blue-200/40 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-16"
+  >
+    <!-- LEFT CONTENT -->
+    <div>
+      <!-- Back Link -->
+      <a
+        href="/"
+        class="mb-10 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition-colors hover:text-blue-800"
+      >
+        <span aria-hidden="true">←</span>
+        Back to DevFest
+      </a>
+
+      <!-- Date Badge -->
+      <div class="mb-7">
+        <span
+          class="inline-flex items-center gap-2 rounded-full bg-yellow-300 px-4 py-2 text-sm font-bold text-slate-900"
+        >
+          <span
+            class="h-2 w-2 rounded-full bg-yellow-500"
+            aria-hidden="true"
+          ></span>
+
+          {eventDate} · Windsor, ON
+        </span>
+      </div>
+
+      <!-- Section Label -->
+      <p
+        class="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-blue-600"
+      >
+        DevFest Windsor 2026 · Student Experience
+      </p>
+
+      <!-- Main Heading -->
+      <h1
+        id="high-school-title"
+        class="mb-6 text-5xl font-extrabold leading-[1.05] tracking-tight text-slate-950 sm:text-6xl xl:text-7xl"
+      >
+        High School
+
+        <span class="block text-blue-600">
+          Track 2026.
+        </span>
+      </h1>
+
+      <!-- Tagline -->
+      <p
+        class="mb-5 text-xl font-bold text-slate-800 sm:text-2xl"
+      >
+        Build. Code. Create.
+      </p>
+
+      <!-- Description -->
+      <p
+        class="mb-9 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg"
+      >
+        A hands-on robotics and coding experience for high school
+        students. Discover technology, collaborate with others,
+        and explore what you can create at DevFest Windsor 2026.
+      </p>
+
+      <!-- HERO CTA — GET TICKETS -->
+      <div class="flex flex-wrap items-center gap-4">
+        <a
+          href={ticketsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-blue-600 px-8 py-4 text-base font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600"
+        >
+          Get Tickets
+
+          <span
+            class="inline-block transition-transform duration-300 group-hover:translate-x-1"
+            aria-hidden="true"
+          >
+            ↗
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT ILLUSTRATION -->
+    <div class="relative mx-auto w-full max-w-xl">
+      <!-- Illustration Glow -->
+      <div
+        class="pointer-events-none absolute inset-10 rounded-full bg-yellow-200/40 blur-3xl"
+        aria-hidden="true"
+      ></div>
+
+      <!-- Main Illustration -->
+      <img
+        src="/images/high-school-track-robotics.webp"
+        alt="Illustration of a robotic car, laptop displaying code, and graduation cap"
+        width="1024"
+        height="1024"
+        loading="eager"
+        decoding="async"
+        class="relative z-10 mx-auto block h-auto w-full object-contain"
+      />
+    </div>
+  </div>
+
+  <!-- Google Color Accent -->
+  <div
+    class="relative mx-auto mt-14 flex h-1 max-w-7xl gap-2"
+    aria-hidden="true"
+  >
+    <span class="w-16 rounded-full bg-blue-600"></span>
+    <span class="w-16 rounded-full bg-red-500"></span>
+    <span class="w-16 rounded-full bg-yellow-400"></span>
+    <span class="w-16 rounded-full bg-green-600"></span>
+  </div>
+</section>
+
+
+<!-- ==========================================
+     ABOUT THE WORKSHOP
+========================================== -->
+
+<section
+  id="about-workshop"
+  class="scroll-mt-24 bg-white px-4 py-20 sm:px-6 sm:py-28 lg:px-8"
+  aria-labelledby="about-workshop-title"
+>
+  <div class="mx-auto max-w-6xl">
+
+    <!-- Section Heading -->
+    <div class="mb-10">
+      <p
+        class="mb-4 text-sm font-bold uppercase tracking-widest text-blue-600"
+      >
+        About the Workshop
+      </p>
+
+      <h2
+        id="about-workshop-title"
+        class="max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl"
+      >
+        Where curiosity meets
+
+        <span class="text-blue-600">
+          technology.
+        </span>
+      </h2>
+    </div>
+
+    <!-- Description Columns -->
+    <div class="grid gap-8 md:grid-cols-2 md:gap-14">
+      <p class="text-lg leading-relaxed text-slate-600">
+        The High School Track introduces students to practical
+        robotics and programming through an interactive group
+        project. Participants explore how hardware and software
+        work together to bring technology to life.
+      </p>
+
+      <p class="text-lg leading-relaxed text-slate-600">
+        Inspired by the previous DevFest workshop, the experience
+        combines building, coding, teamwork, and problem-solving
+        while introducing students to the wider developer community.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==========================================
+     WHAT YOU'LL BUILD
+========================================== -->
+
+<section
+  id="what-youll-build"
+  class="bg-slate-50 px-4 py-20 sm:px-6 sm:py-28 lg:px-8"
+  aria-labelledby="what-youll-build-title"
+>
+  <div class="mx-auto max-w-7xl">
+
+    <!-- Section Heading -->
+    <div class="mb-12 max-w-3xl">
+      <p
+        class="mb-4 text-sm font-bold uppercase tracking-widest text-blue-600"
+      >
+        Hands-On Learning
+      </p>
+
+      <h2
+        id="what-youll-build-title"
+        class="mb-6 text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl"
+      >
+        What You'll Build
+      </h2>
+
+      <p class="text-lg leading-relaxed text-slate-600">
+        Discover how programming, electronics, and creativity
+        come together through an exciting robotics project.
+      </p>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="grid gap-6 md:grid-cols-3">
+      {
+        features.map((feature) => (
+          <article
+            class="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-9"
+          >
+            <div class="mb-8 flex items-center justify-between">
+
+              <!-- Icon -->
+              <div
+                class="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-3xl"
+              >
+                <span aria-hidden="true">
+                  {feature.icon}
+                </span>
+              </div>
+
+              <!-- Number -->
+              <span class="text-sm font-extrabold text-blue-500">
+                {feature.number}
+              </span>
+            </div>
+
+            <!-- Color Accent -->
+            <div
+              class:list={[
+                "mb-6 h-1 w-16 rounded-full",
+                accentColors[feature.color],
+              ]}
+              aria-hidden="true"
+            />
+
+            <!-- Card Title -->
+            <h3 class="mb-4 text-2xl font-bold text-slate-900">
+              {feature.title}
+            </h3>
+
+            <!-- Card Description -->
+            <p class="leading-relaxed text-slate-600">
+              {feature.description}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==========================================
+     WORKSHOP EXPERIENCE
+========================================== -->
+
+<section
+  id="workshop-experience"
+  class="bg-white px-4 py-20 sm:px-6 sm:py-28 lg:px-8"
+  aria-labelledby="workshop-experience-title"
+>
+  <div
+    class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20"
+  >
+
+    <!-- LEFT CONTENT -->
+    <div>
+      <p
+        class="mb-4 text-sm font-bold uppercase tracking-widest text-blue-600"
+      >
+        The Experience
+      </p>
+
+      <h2
+        id="workshop-experience-title"
+        class="mb-6 text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl"
+      >
+        More than just
+
+        <span class="text-blue-600">
+          a workshop.
+        </span>
+      </h2>
+
+      <p class="mb-9 text-lg leading-relaxed text-slate-600">
+        The High School Track combines collaborative learning,
+        hands-on technology, and creative problem-solving
+        in an inspiring environment.
+      </p>
+
+      <!-- Experience List -->
+      <div class="space-y-6">
+        {
+          experiences.map((experience) => (
+            <div class="flex items-start gap-4">
+
+              <!-- Check Icon -->
+              <div
+                class="mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-green-100 text-green-700"
+              >
+                <span aria-hidden="true">
+                  ✓
+                </span>
+              </div>
+
+              <!-- Text -->
+              <div>
+                <h3 class="mb-1 text-lg font-bold text-slate-900">
+                  {experience.title}
+                </h3>
+
+                <p class="leading-relaxed text-slate-600">
+                  {experience.description}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- RIGHT FEATURE PANEL -->
+    <div
+      class="relative overflow-hidden rounded-[32px] bg-blue-600 p-9 text-white shadow-2xl sm:p-14"
+    >
+      <!-- Decorative Circles -->
+      <div
+        class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-yellow-300/20"
+        aria-hidden="true"
+      ></div>
+
+      <!-- Panel Content -->
+      <div class="relative z-10">
+        <div
+          class="mb-8 flex h-20 w-20 items-center justify-center rounded-3xl bg-white/15 text-5xl"
+          aria-hidden="true"
+        >
+          🎓
+        </div>
+
+        <h3
+          class="mb-6 text-3xl font-extrabold leading-tight sm:text-4xl"
+        >
+          Your journey into tech starts here.
+        </h3>
+
+        <p class="text-lg leading-relaxed text-blue-100">
+          Learn by doing, discover new possibilities, and
+          connect with people who share your curiosity
+          about technology.
+        </p>
+
+        <!-- Google Color Accent -->
+        <div
+          class="mt-12 flex gap-2"
+          aria-hidden="true"
+        >
+          <span class="h-1 w-14 rounded-full bg-white"></span>
+          <span class="h-1 w-14 rounded-full bg-red-400"></span>
+          <span class="h-1 w-14 rounded-full bg-yellow-300"></span>
+          <span class="h-1 w-14 rounded-full bg-green-400"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==========================================
+     FINAL CTA — GET TICKETS
+========================================== -->
+
+<section
+  id="high-school-cta"
+  class="relative overflow-hidden bg-slate-950 px-4 py-20 text-center text-white sm:px-6 sm:py-28 lg:px-8"
+  aria-labelledby="high-school-cta-title"
+>
+  <!-- Background Decorations -->
+  <div
+    class="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-blue-600/20 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute -bottom-32 -right-24 h-80 w-80 rounded-full bg-green-500/10 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative mx-auto max-w-3xl">
+
+    <!-- Section Label -->
+    <p
+      class="mb-5 text-sm font-bold uppercase tracking-widest text-yellow-300"
+    >
+      DevFest Windsor 2026
+    </p>
+
+    <!-- Heading -->
+    <h2
+      id="high-school-cta-title"
+      class="mb-7 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl"
+    >
+      Ready to Build
+
+      <span class="text-blue-400">
+        Something Amazing?
+      </span>
+    </h2>
+
+    <!-- Description -->
+    <p
+      class="mx-auto mb-9 max-w-2xl text-lg leading-relaxed text-slate-300"
+    >
+      Join the next generation of creators and innovators.
+      Explore DevFest Windsor 2026 tickets while High School Track
+      registration details are being finalized.
+    </p>
+
+    <!-- FINAL CTA BUTTON -->
+    <a
+      href={ticketsUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-blue-600 px-9 py-4 text-base font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-blue-500 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
+    >
+      Get Tickets
+
+      <span
+        class="inline-block transition-transform duration-300 group-hover:translate-x-1"
+        aria-hidden="true"
+      >
+        ↗
+      </span>
+    </a>
+
+    <!-- Google Color Accent -->
+    <div
+      class="mx-auto mt-12 flex h-1 max-w-xs gap-2"
+      aria-hidden="true"
+    >
+      <span class="flex-1 rounded-full bg-blue-500"></span>
+      <span class="flex-1 rounded-full bg-red-500"></span>
+      <span class="flex-1 rounded-full bg-yellow-400"></span>
+      <span class="flex-1 rounded-full bg-green-500"></span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==========================================
+     ACCESSIBILITY — REDUCED MOTION
+========================================== -->
+
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    #high-school-cta a,
+    section[aria-labelledby="high-school-title"] a {
+      transition: none !important;
+    }
+
+    #high-school-cta a:hover,
+    section[aria-labelledby="high-school-title"] a:hover {
+      transform: none !important;
+    }
+  }
+</style>
