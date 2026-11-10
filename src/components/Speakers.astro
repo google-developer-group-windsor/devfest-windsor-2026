@@ -179,15 +179,16 @@ const linkedinPath =
                       ></span>
 
                       <img
-                        src={speaker.imageUrl}
-                        alt={speaker.imageAlt}
-                        class:list={[
-                          "speaker-photo",
-                          accent.ring,
-                        ]}
-                        loading="lazy"
-                        decoding="async"
-                      />
+  src={speaker.imageUrl}
+  alt={speaker.imageAlt}
+  class:list={[
+    "speaker-photo",
+    accent.ring,
+    speaker.name === "Mahnoz Akhtari" && "mahnoz-photo",
+  ]}
+  loading="lazy"
+  decoding="async"
+/>
                     </button>
 
                     <!-- SPEAKER INFORMATION -->
@@ -516,6 +517,12 @@ const linkedinPath =
     transform: scale(1.06);
     box-shadow: 0 12px 30px rgb(0 0 0 / 16%);
   }
+ 
+
+/* Preserve the zoom effect on hover */
+.speaker-card:hover .speaker-photo.mahnoz-photo {
+  transform: scale(1.16);
+}
 
   .blob-shape {
     position: absolute;

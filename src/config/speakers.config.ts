@@ -296,7 +296,7 @@ export const FEATURED_SPEAKERS: Speaker[] = [
     name: "Mahnoz Akhtari",
     role: "Principal",
     company: "Grayfel Technologies",
-    imageUrl: "/speakers/mahnoz-akhtari.webp",
+    imageUrl: "/speakers/MahnozAkhtari.png",
     imageAlt: "Mahnoz Akhtari",
     linkedinUrl: "https://www.linkedin.com/in/mahnoz-akhtari-65125a267/",
     accentColor: "gold",
