@@ -3,8 +3,8 @@ import type { Speaker } from "../types/speaker";
 export const FEATURED_SPEAKERS: Speaker[] = [
   {
     name: "Serg Masís",
-    role: "Climate and Agronomic Data Scientist",
-    company: "Syngenta",
+    role: "Principal AI Scientist",
+company: "Syngenta",
     imageUrl: "/speakers/serg-masis-v2.webp",
     imageAlt: "Serg Masís",
     linkedinUrl: "https://www.linkedin.com/in/smasis/",
