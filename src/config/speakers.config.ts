@@ -174,8 +174,8 @@ export const FEATURED_SPEAKERS: Speaker[] = [
   },
   {
     name: "Sandra Lopez-Zamora",
-    role: "Senior Manager - Data Strategy and Analytics",
-    company: "Scotiabank",
+   role: "Senior AI/ML Engineer",
+company: "Pythian",
     imageUrl: "/speakers/sandra-lopez-zamora.webp",
     imageAlt: "Sandra Lopez-Zamora",
     linkedinUrl: "https://www.linkedin.com/in/slopezza/",
