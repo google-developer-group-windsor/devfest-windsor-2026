@@ -52,6 +52,12 @@ const sponsors = [
   color: "blue",
 },
 {
+  name: "Asamaka Industries Ltd",
+  logo: "/sponsors/asamaka.png",
+  website: "https://www.asamaka.com/",
+  className: "scale-125",
+},
+{
   name: "Packt Publishing",
   logo: "/sponsors/Packt.svg",
   url: "https://www.packtpub.com/en-ca",
@@ -296,12 +302,15 @@ const colorStyles: Record<
                     ]}
                   >
                     <img
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      loading="lazy"
-                      decoding="async"
-                      class="sponsor-logo"
-                    />
+  src={sponsor.logo}
+  alt={sponsor.name}
+  loading="lazy"
+  decoding="async"
+  class:list={[
+    "sponsor-logo",
+    sponsor.name === "Asamaka Industries Ltd" && "asamaka-logo",
+  ]}
+/>
                   </div>
                 </>
               )}
@@ -411,6 +420,14 @@ const colorStyles: Record<
   .sponsor-card:hover .sponsor-logo {
     transform: scale(1.06);
   }
+  .sponsor-logo.asamaka-logo {
+  transform: scale(1.3);
+  transform-origin: center;
+}
+
+.sponsor-card:hover .sponsor-logo.asamaka-logo {
+  transform: scale(1.38);
+}
 
   .blob-shape {
     border-radius: 30% 70% 70% 30%;
