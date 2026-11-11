@@ -52,7 +52,7 @@ company: "Syngenta",
     accentColor: "gold",
     bio: `Bryan Kelly is a Staff Software Engineer at Google, specializing in Applied AI and forward-deployed engineering.`,
   },
-  {
+ {
   name: "Yvonne Pilon",
   role: "President & CEO",
   company: "WEtech Alliance",
@@ -60,7 +60,11 @@ company: "Syngenta",
   imageAlt: "Yvonne Pilon",
   linkedinUrl: "",
   accentColor: "red",
-  bio: `Yvonne Pilon is the President & CEO of WEtech Alliance.`,
+  bio: `Yvonne Pilon is the President and CEO of WEtech Alliance, one of Ontario’s Regional Innovation Centres. With 15+ years of leadership at the intersection of technology, innovation, entrepreneurship, and economic development, she is widely recognized for championing Canadian Tech and cross-border collaboration and strengthening entrepreneurial ecosystems that drive innovation and prosperity across Canada and the U.S.
+
+Yvonne serves on the Board of Directors for the Technology Councils of North America (TECNA) and on the Advisory Board for Canada’s Tech Network, amplifying the voice of innovators nationally and internationally.
+
+She has represented Canada as a G20 Youth Entrepreneurship delegate and has been recognized as an Emerging Leader in Startups & Tech by The Peak.`,
 },
   {
     name: "Atif Khan",
