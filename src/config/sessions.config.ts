@@ -288,4 +288,16 @@ Whether you're a student, a developer, or just curious about where AI is heading
     isSubmitted: true,
   },
 
+
+  {
+    id: "vimal-k-001",
+    title: "Google AI Studio: Prompt Design",
+    speaker: "Vimal K.",
+    description: `Google AI Studio is a powerful tool that allows you to interact with various AI models and experiment with different prompts. It serves as a platform for developers to experiment with and integrate Gemini's multimodal generative AI capabilities into their applications. In addition, it provides an environment for prompt engineering, where you can test and refine prompts to achieve desired outputs from Gemini models.
+
+This lab explores prompt engineering and best practices for designing effective prompts to improve the quality of your LLM-generated responses. You learn how to craft prompts that are concise, specific, and well-defined, focusing on one task at a time.`,
+    isSubmitted: true,
+  },
+
+
 ];
