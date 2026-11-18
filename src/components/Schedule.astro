@@ -865,45 +865,25 @@ const icons: Record<string, string> = {
       dialog.close();
     });
 
-    appleButton.addEventListener("click", () => {
-      const icsContent = [
-        "BEGIN:VCALENDAR",
-        "VERSION:2.0",
-        "PRODID:-//Google DevFest Windsor//NONSGML v1.0//EN",
-        "CALSCALE:GREGORIAN",
-        "METHOD:PUBLISH",
-        "BEGIN:VEVENT",
-        `UID:devfest-${Date.now()}@googledevfest.local`,
-        `DTSTAMP:${formatUtcDate(new Date())}`,
-        `DTSTART:${formatUtcDate(startDate)}`,
-        `DTEND:${formatUtcDate(endDate)}`,
-        `SUMMARY:${escapeIcsText(title)}`,
-        `DESCRIPTION:${escapeIcsText(details)}`,
-        `LOCATION:${escapeIcsText(location)}`,
-        "STATUS:CONFIRMED",
-        "END:VEVENT",
-        "END:VCALENDAR",
-        "",
-      ].join("\r\n");
+    
+appleButton.addEventListener("click", () => {
+  const params = new URLSearchParams({
+    title,
+    speaker,
+    description,
+    location: `Odette Building, Room ${location}, University of Windsor`,
+    start: formatUtcDate(startDate),
+    end: formatUtcDate(endDate),
+  });
 
-      const blob = new Blob([icsContent], {
-        type: "text/calendar;charset=utf-8",
-      });
+  const calendarUrl = `/calendar.ics?${params.toString()}`;
 
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
+  dialog.close();
 
-      link.href = url;
-      link.download =
-        `${title.replace(/[^a-z0-9]+/gi, "-")}.ics`;
+  // Open a real calendar file URL for better iOS Safari support.
+  window.location.assign(calendarUrl);
+});
 
-      document.body.append(link);
-      link.click();
-      link.remove();
-
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-      dialog.close();
-    });
 
     cancelButton.addEventListener(
       "click",
