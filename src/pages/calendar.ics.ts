@@ -2,7 +2,7 @@
 import type { APIRoute } from "astro";
 
 // This endpoint must run dynamically to read event query parameters.
-export const prerender = false;
+
 
 function escapeIcsText(value: string): string {
   return value
