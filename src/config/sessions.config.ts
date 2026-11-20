@@ -299,5 +299,15 @@ This lab explores prompt engineering and best practices for designing effective 
     isSubmitted: true,
   },
 
+{
+  id: "camila-gaitan-kevin-serrano-001",
+  title: "Beyond the Prompt: Building a Connected Ecosystem with Local AI and IoT",
+  speaker: "Camila Gaitan / Kevin Serrano Mojica",
+  description: `What does it take for artificial intelligence to understand what’s happening in the physical world? In this talk, we’ll explore how to connect sensors, process data, and integrate locally running AI to build a system where hardware and software work together—without relying on an internet connection.
 
+We’ll walk through the design decisions, integration challenges, and lessons learned while turning an idea into a working prototype. Whether you’re curious about AI and the Internet of Things or looking to build your first connected solution, you’ll get an accessible look at how these technologies come together.
+
+We’ll close with a demonstration of Lefi Crop, the project that brings these pieces together to support smarter crop management.`,
+  isSubmitted: true,
+},
 ];
