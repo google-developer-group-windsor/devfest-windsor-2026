@@ -1,0 +1,46 @@
+---
+const appStoreUrl =
+  "https://apps.apple.com/us/app/gdg-windsor-devfest-2026/id6821626571";
+
+const googlePlayUrl =
+  "https://play.google.com/store/apps/details?id=com.gdgwindsor.devfest";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download DevFest Windsor 2026 App</title>
+
+    <script is:inline>
+      const userAgent = navigator.userAgent || "";
+
+      const appStore =
+        "https://apps.apple.com/us/app/gdg-windsor-devfest-2026/id6821626571";
+
+      const googlePlay =
+        "https://play.google.com/store/apps/details?id=com.gdgwindsor.devfest";
+
+      if (/iPhone|iPad|iPod/i.test(userAgent)) {
+        window.location.replace(appStore);
+      } else if (/Android/i.test(userAgent)) {
+        window.location.replace(googlePlay);
+      }
+    </script>
+  </head>
+
+  <body
+    style="font-family: system-ui, sans-serif; text-align: center; padding: 64px 20px;"
+  >
+    <h1>Download the DevFest App</h1>
+    <p>Choose your app store to get started.</p>
+
+    <p>
+      <a href={appStoreUrl}>Download on the App Store</a>
+    </p>
+
+    <p>
+      <a href={googlePlayUrl}>Get it on Google Play</a>
+    </p>
+  </body>
+</html>

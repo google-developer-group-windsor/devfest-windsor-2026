@@ -1,10 +1,22 @@
+
 ---
 interface Props {
   title?: string;
   description?: string;
 }
 
-const { title = "Download Our DevFest App" } = Astro.props;
+const {
+  title = "Download Our DevFest App",
+  description = "The official DevFest Windsor 2026 app is now available!",
+} = Astro.props;
+
+const appStoreUrl =
+  "https://apps.apple.com/us/app/gdg-windsor-devfest-2026/id6821626571";
+
+const googlePlayUrl =
+  "https://play.google.com/store/apps/details?id=com.gdgwindsor.devfest";
+
+const smartDownloadUrl = "/download/";
 ---
 
 <section id="application" class="py-20 sm:py-24 bg-white">
@@ -40,52 +52,64 @@ const { title = "Download Our DevFest App" } = Astro.props;
     >
       <!-- App Illustration -->
       <div class="flex justify-center">
-        <img
-          src="/MobileApp.png"
-          alt="DevFest App on Mobile"
-          class="w-full max-w-sm h-auto drop-shadow-lg"
-          loading="lazy"
-        />
+        <a
+          href={smartDownloadUrl}
+          class="block w-full max-w-sm rounded-2xl transition-transform duration-300 hover:scale-[1.03] focus-visible:outline focus-visible:outline-4 focus-visible:outline-blue-500"
+          aria-label="Download the DevFest Windsor 2026 mobile app"
+          title="Download the DevFest app"
+        >
+          <img
+            src="/MobileApp.png"
+            alt="GDG Windsor DevFest 2026 mobile app download illustration"
+            class="w-full h-auto drop-shadow-lg"
+            loading="lazy"
+            width="600"
+            height="600"
+          />
+        </a>
       </div>
 
-      <!-- Coming Soon Message -->
+      <!-- App Download Information -->
       <div class="flex flex-col justify-center">
         <div
           class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 sm:p-8 border border-blue-100"
         >
+          <!-- Availability Status -->
           <div class="flex items-center gap-3 mb-4">
             <div
-              class="application-status-dot w-3 h-3 rounded-full bg-blue-600 animate-pulse"
+              class="application-status-dot w-3 h-3 rounded-full bg-green-500"
               aria-hidden="true"
             ></div>
 
             <span
-              class="text-sm font-semibold text-blue-600 uppercase tracking-wide"
-              data-i18n="application.comingSoon"
+              class="text-sm font-semibold text-green-700 uppercase tracking-wide"
+              data-i18n="application.nowAvailable"
             >
-              Coming Soon
+              Now Available
             </span>
           </div>
 
+          <!-- Main Heading -->
           <h3
             class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4"
-            data-i18n="application.excitingThings"
+            data-i18n="application.downloadHeading"
           >
-            Something Exciting is Coming
+            Your DevFest Experience Starts Here
           </h3>
 
+          <!-- Description -->
           <p
             class="text-slate-600 leading-relaxed mb-6"
-            data-i18n="application.buildingApp"
+            data-i18n="application.availableDescription"
           >
-            We're building an amazing mobile experience for DevFest Windsor
-            2026. The official app will give you instant access to the
-            schedule, speaker information, interactive networking features,
-            and live updates throughout the event.
+            The official DevFest Windsor 2026 app is live!
+            Explore the event schedule, discover speakers,
+            connect with fellow attendees, and stay updated
+            throughout the conference.
           </p>
 
           <!-- App Features -->
-          <div class="space-y-3 mb-6">
+          <div class="space-y-3 mb-8">
             <div class="flex items-start gap-3">
               <svg
                 class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"
@@ -153,12 +177,58 @@ const { title = "Download Our DevFest App" } = Astro.props;
             </div>
           </div>
 
+          <!-- App Store Buttons -->
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href={appStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download DevFest Windsor 2026 on the Apple App Store"
+              class="application-store-button inline-flex items-center justify-center gap-3 rounded-xl bg-slate-900 px-5 py-4 text-white font-semibold transition-all duration-200 hover:bg-slate-800 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-4 focus-visible:outline-blue-500"
+            >
+              <svg
+                class="w-6 h-6 flex-shrink-0"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M17.05 12.536c.03 3.07 2.69 4.09 2.72 4.1-.02.07-.43 1.49-1.4 2.96-.84 1.27-1.71 2.54-3.09 2.57-1.35.03-1.79-.83-3.34-.83-1.55 0-2.04.8-3.32.86-1.33.05-2.35-1.38-3.19-2.64-1.73-2.58-3.05-7.29-1.28-10.47a4.95 4.95 0 0 1 4.17-2.54c1.3-.02 2.53.9 3.33.9.79 0 2.28-1.12 3.84-.95.65.03 2.48.26 3.65 1.98-.1.06-2.18 1.27-2.15 3.81ZM14.46 4.5A4.7 4.7 0 0 0 15.54 1c-1.04.04-2.3.69-3.04 1.54a4.48 4.48 0 0 0-1.12 3.4c1.16.09 2.35-.59 3.08-1.44Z"
+                />
+              </svg>
+
+              <span>App Store</span>
+            </a>
+
+            <a
+              href={googlePlayUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download DevFest Windsor 2026 on Google Play"
+              class="application-store-button inline-flex items-center justify-center gap-3 rounded-xl bg-blue-600 px-5 py-4 text-white font-semibold transition-all duration-200 hover:bg-blue-700 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-4 focus-visible:outline-blue-500"
+            >
+              <svg
+                class="w-6 h-6 flex-shrink-0"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3.18 2.76c-.12.2-.18.48-.18.82v16.84c0 .34.06.62.18.82l9.44-9.24-9.44-9.24Zm1.2-.7 11.1 6.36-2.05 2.01L4.38 2.06Zm12.42 7.11 3.25 1.86c1.26.72 1.26 1.22 0 1.94l-3.25 1.86-2.39-2.34 2.39-2.32Zm-1.32 6.41-11.1 6.36 9.05-8.37 2.05 2.01Z"
+                />
+              </svg>
+
+              <span>Google Play</span>
+            </a>
+          </div>
+
+          <!-- Download Note -->
           <p
-            class="text-sm text-slate-500"
-            data-i18n="application.checkBack"
+            class="text-sm text-slate-500 mt-5"
+            data-i18n="application.downloadNote"
           >
-            Check back soon for the app link and QR code. We'll announce
-            the launch on our social channels!
+            Available for iOS and Android. Download the app
+            and get ready for DevFest Windsor 2026!
           </p>
         </div>
       </div>
@@ -186,12 +256,21 @@ const { title = "Download Our DevFest App" } = Astro.props;
     border-radius: 9999px;
   }
 
+  .application-store-button {
+    min-height: 3.5rem;
+    text-decoration: none;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .animate-fade-in-up,
     .application-status-dot {
       animation: none !important;
       opacity: 1 !important;
       transform: none !important;
+    }
+
+    .application-store-button {
+      transition: none !important;
     }
   }
 </style>
