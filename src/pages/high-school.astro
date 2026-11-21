@@ -1,0 +1,23 @@
+
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import HighSchoolPage from "@components/HighSchoolPage.astro";
+import { EVENT_2026 } from "@config/event.config";
+
+const title = "High School Track 2026 | DevFest Windsor";
+const description =
+  "Explore the High School Track at DevFest Windsor 2026. Discover hands-on robotics, coding, and collaborative learning for high school students.";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={EVENT_2026.seo.ogImage}
+>
+  <Header logoSrc="/web-app-manifest-512x512.png" />
+
+  <main class="pt-20">
+    <HighSchoolPage />
+  </main>
+</BaseLayout>

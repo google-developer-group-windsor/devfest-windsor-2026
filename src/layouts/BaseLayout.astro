@@ -1,3 +1,4 @@
+
 ---
 import "@styles/globals.css";
 import "@styles/animations.css";
@@ -11,70 +12,167 @@ interface Props {
 
 const { title, description, ogImage } = Astro.props;
 
-const canonicalURL = Astro.site
-  ? new URL(Astro.url.pathname, Astro.site)
-  : new URL(Astro.url.pathname, "https://devfest-windsor.dev");
+// Official website URL
+const SITE_URL = "https://wedevfest.com";
+
+// Canonical URL for the current page
+const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
+
+// Convert social sharing images to absolute URLs
+const socialImageURL = ogImage
+  ? new URL(ogImage, SITE_URL).toString()
+  : undefined;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- ==========================================
+         BASIC META TAGS
+    ========================================== -->
+
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
     <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="theme-color" content="#0066ff" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href={canonicalURL} />
+    <meta
+      name="description"
+      content={description}
+    />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalURL} />
+    <meta
+      name="theme-color"
+      content="#0066ff"
+    />
+
+    <!-- ==========================================
+         SEO — CANONICAL URL
+    ========================================== -->
+
+    <link
+      rel="canonical"
+      href={canonicalURL.toString()}
+    />
+
+    <!-- ==========================================
+         OPEN GRAPH — SOCIAL SHARING
+    ========================================== -->
+
+    <meta
+      property="og:title"
+      content={title}
+    />
+
+    <meta
+      property="og:description"
+      content={description}
+    />
+
+    <meta
+      property="og:type"
+      content="website"
+    />
+
+    <meta
+      property="og:url"
+      content={canonicalURL.toString()}
+    />
+
     {
-      ogImage && (
+      socialImageURL && (
         <meta
           property="og:image"
-          content={ogImage}
+          content={socialImageURL}
         />
       )
     }
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <!-- ==========================================
+         TWITTER / X CARD
+    ========================================== -->
+
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+
+    <meta
+      name="twitter:title"
+      content={title}
+    />
+
+    <meta
+      name="twitter:description"
+      content={description}
+    />
+
     {
-      ogImage && (
+      socialImageURL && (
         <meta
           name="twitter:image"
-          content={ogImage}
+          content={socialImageURL}
         />
       )
     }
 
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- ==========================================
+         FAVICONS
+    ========================================== -->
 
-    <!-- Google Fonts - Inter -->
+    <!-- Modern browsers -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+
+    <!-- ICO fallback -->
+    <link
+      rel="alternate icon"
+      type="image/x-icon"
+      href="/favicon.ico"
+    />
+
+    <!-- ==========================================
+         GOOGLE FONTS
+    ========================================== -->
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+
+    <!-- Inter -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
+
   <body class="font-inter bg-white text-slate-900">
     <slot />
+
     <Footer />
   </body>
 </html>
 
+<!-- ==========================================
+     CLIENT-SIDE INTERNATIONALIZATION
+========================================== -->
+
 <script>
   import { initClientI18n } from "@scripts/client-i18n";
+
   initClientI18n();
 </script>

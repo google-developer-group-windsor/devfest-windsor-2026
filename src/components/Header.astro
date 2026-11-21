@@ -1,3 +1,4 @@
+
 ---
 import LanguageSwitcher from "@components/LanguageSwitcher.astro";
 import { t } from "@lib/i18n";
@@ -10,57 +11,100 @@ const { logoSrc = "/web-app-manifest-512x512.png" } = Astro.props;
 
 const currentPath = Astro.url.pathname.replace(/\/+$/, "") || "/";
 
-const isActivePage = (href: string) => currentPath === href;
+const isActivePage = (href: string) =>
+  currentPath === (href.replace(/\/+$/, "") || "/");
 
 const ticketsUrl =
-  "https://gdg.community.dev/events/details/google-gdg-windsor-presents-gdg-windsor-essex-devfest-2026/cohost-gdg-windsor/";
+  "https://gdg.community.dev/events/details/google-gdg-windsor-presents-gdg-windsor-essex-devfest-2026/cohost-gdg-windsor/?showTickets=true";
 
 const navItems = [
-  { label: t("en", "nav.home"), key: "nav.home", href: "/" },
-  { label: t("en", "nav.about"), key: "nav.about", href: "/about" },
-  { label: t("en", "nav.venue"), key: "nav.venue", href: "/venue" },
-  { label: t("en", "nav.faq"), key: "nav.faq", href: "/faq" },
+  {
+    label: t("en", "nav.home"),
+    key: "nav.home",
+    href: "/",
+  },
+  {
+    label: t("en", "nav.about"),
+    key: "nav.about",
+    href: "/about/",
+  },
+  {
+    label: "High School Track",
+    key: "nav.highSchoolTrack",
+    href: "/high-school/",
+  },
+  {
+    label: t("en", "nav.venue"),
+    key: "nav.venue",
+    href: "/venue/",
+  },
+  {
+    label: t("en", "nav.faq"),
+    key: "nav.faq",
+    href: "/faq/",
+  },
 ];
 ---
+
+<!-- ==========================================
+     DEVFEST WINDSOR 2026 — HEADER
+========================================== -->
 
 <header
   class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
     <div class="flex items-center justify-between h-20">
-      <!-- Logo -->
+
+      <!-- ======================================
+           LOGO
+      ======================================= -->
       <a
         href="/"
         class="flex items-center gap-2 hover:opacity-80 transition-opacity"
+        aria-label="DevFest Windsor 2026 — Home"
       >
         <div class="flex items-center gap-3">
+
           <img
             src={logoSrc}
             alt="DevFest Windsor 2026"
-            class="h-12 w-auto"
+            class="h-16 w-auto flex-shrink-0"
           />
 
           <div class="flex flex-col -space-y-2">
-            <span class="text-lg font-bold" style="color: #000000;">
+            <span
+              class="text-lg font-bold"
+              style="color: #000000;"
+            >
               DevFest
             </span>
-            <span class="text-lg font-bold" style="color: #4285F4;">
+
+            <span
+              class="text-lg font-bold"
+              style="color: #4285F4;"
+            >
               2026
             </span>
           </div>
+
         </div>
       </a>
 
-      <!-- Desktop Navigation -->
+
+      <!-- ======================================
+           DESKTOP NAVIGATION
+      ======================================= -->
       <nav
-        class="hidden md:flex items-center gap-8"
+        class="hidden md:flex items-center gap-6 lg:gap-8"
         aria-label="Main navigation"
       >
         {
           navItems.map((item) => (
             <a
               href={item.href}
-              class={`text-sm transition-colors ${
+              class={`text-sm whitespace-nowrap transition-colors ${
                 isActivePage(item.href)
                   ? "nav-active-gradient"
                   : "text-slate-700 font-medium hover:text-blue-600"
@@ -74,11 +118,17 @@ const navItems = [
         }
       </nav>
 
-      <!-- Language Switcher, Mobile Menu Button, and Tickets -->
+
+      <!-- ======================================
+           LANGUAGE SWITCHER / MENU / TICKETS
+      ======================================= -->
       <div class="flex items-center gap-4">
+
+        <!-- Language Switcher -->
         <LanguageSwitcher />
 
-        <!-- Mobile Menu Button -->
+
+        <!-- MOBILE MENU BUTTON -->
         <button
           type="button"
           id="mobile-menu-btn"
@@ -92,7 +142,8 @@ const navItems = [
           <span class="w-6 h-0.5 bg-slate-700 transition-all"></span>
         </button>
 
-        <!-- Desktop Tickets Button -->
+
+        <!-- DESKTOP TICKETS BUTTON -->
         <a
           href={ticketsUrl}
           target="_blank"
@@ -102,10 +153,14 @@ const navItems = [
         >
           {t("en", "nav.getTickets")}
         </a>
+
       </div>
     </div>
 
-    <!-- Mobile Navigation Menu -->
+
+    <!-- ======================================
+         MOBILE NAVIGATION
+    ======================================= -->
     <nav
       id="mobile-nav"
       class="hidden md:hidden flex-col gap-2 pt-4 pb-4 border-t border-slate-200"
@@ -128,7 +183,8 @@ const navItems = [
         ))
       }
 
-      <!-- Mobile Tickets Button -->
+
+      <!-- MOBILE TICKETS BUTTON -->
       <a
         href={ticketsUrl}
         target="_blank"
@@ -138,10 +194,16 @@ const navItems = [
       >
         {t("en", "nav.getTickets")}
       </a>
+
     </nav>
+
   </div>
 </header>
 
+
+<!-- ==========================================
+     MOBILE MENU INTERACTIONS
+========================================== -->
 <script>
   const mobileMenuBtn =
     document.querySelector<HTMLButtonElement>("#mobile-menu-btn");
@@ -152,7 +214,11 @@ const navItems = [
     const setMenuOpen = (isOpen: boolean) => {
       mobileNav.classList.toggle("hidden", !isOpen);
       mobileNav.classList.toggle("flex", isOpen);
-      mobileMenuBtn.setAttribute("aria-expanded", String(isOpen));
+
+      mobileMenuBtn.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
     };
 
     mobileMenuBtn.addEventListener("click", () => {
@@ -180,9 +246,14 @@ const navItems = [
   }
 </script>
 
+
+<!-- ==========================================
+     ACTIVE NAVIGATION STYLES
+========================================== -->
 <style>
   .nav-active-gradient {
     font-weight: 800;
+
     background-image: linear-gradient(
       90deg,
       #005ac1 0%,
@@ -192,11 +263,15 @@ const navItems = [
       #fbbc05 75%,
       #f59e0b 100%
     );
+
     background-size: 200% auto;
+
     background-clip: text;
     -webkit-background-clip: text;
+
     color: transparent;
     -webkit-text-fill-color: transparent;
+
     animation: navGradientShift 6s ease-in-out infinite;
   }
 
