@@ -186,18 +186,20 @@ function createScheduledSession(
   time: string,
   speaker: string,
   track: string,
+  title?: string,
+  description?: string,
 ) {
   const room = trackRooms[track];
 
   return {
     time,
     duration: "45 min",
-    title: `Session with ${speaker.replace(/ \/ /g, " & ")}`,
+    title: title ?? `Session with ${speaker.replace(/ \/ /g, " & ")}`,
     speaker,
     track,
     type: "Technical Session",
     location: room,
-    description: `${track} track session in Room ${room}.`,
+    description: description ?? `${track} track session in Room ${room}.`,
   };
 }
 
@@ -283,6 +285,7 @@ Moderator:
     "Chukwuka (Eddie) Asamaka",
     LEADERSHIP_TRACK,
   ),
+  createScheduledSession("3:00 PM", "Sandra Lopez-Zamora", "Cybersecurity"),
 
   // 4:00–4:45 PM
   createScheduledSession("4:00 PM", "Florid Maclean", "Google Cloud"),
@@ -293,7 +296,13 @@ Moderator:
     "Full Stack",
   ),
   createScheduledSession("4:00 PM", "Wen Teoh", LEADERSHIP_TRACK),
-  createScheduledSession("4:00 PM", "Arunesh Choudhary", "Cybersecurity"),
+  createScheduledSession(
+    "4:00 PM",
+    "Arunesh Choudhary",
+    "Cybersecurity",
+    "Multi-Agent SOC: Building AI Agents That Defend, and Governing Them",
+    "AI agents are moving from demos to real work, and a security operations center is a good place to test them. In this talk we build a small SOC team with Google ADK, one step at a time. Every step adds a single idea to the same agent, and all the data is fake.\n\nWe start with a root agent that stays on topic, verifies who the user is, and saves their role. It then routes the user to the right specialist. A SOC analyst agent reads alerts and searches logs. An incident commander agent ranks alerts and recommends next steps. A role guard blocks any agent from serving a user whose role doesn't allow it. Each agent gets only the tools its job needs, so you see least privilege in working code instead of a slide.\n\nYou'll leave with a working multi-agent pattern in ADK (root agent, sub-agents, tools, callbacks) and a repo you can run, read and extend.",
+  ),
 
   // Closing session
   {
